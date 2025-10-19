@@ -13,13 +13,24 @@ class Restaurants {
       where: {
         id: id
       }, 
-      include: { listings: true },      
+      include: { listings: {
+        include: {
+          platform: {
+            select: {
+              name: true,
+              platform_uri: true
+            }
+          },
+          platform_availability: {
+            select: {
+              is_available: true,
+              created_at: true,
+              updated_at: true
+            }
+          }
+        }
+      } },
     });
-  }
-
-  public getRestaurantAvailability = async(id: number) => {
-    const restaurant = await this.getRestaurant(id);
-    return restaurant;
   }
 }
 
