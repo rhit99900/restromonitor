@@ -10,3 +10,46 @@ datasource db {
   provider = "sqlite"
   url      = env("DATABASE_URL")
 }
+
+model Restaurants {
+  id    Int   @id @default(autoincrement())
+  name  String @unique
+  address String
+  brand String
+  city  String
+  expected_open_time  String
+  expected_close_time  String
+  created_at  DateTime @default(now())
+  listings RestaurantPlatform[]  
+}
+
+model Platform {
+  id Int @id @default(autoincrement())
+  name String @unique
+  platform_uri String
+  created_at DateTime @default(now())
+  restaurants RestaurantPlatform[]  
+}
+
+model RestaurantPlatform {
+  id Int @id @default(autoincrement())
+  restaurant_id Int   
+  restaurant Restaurants @relation(fields: [restaurant_id], references: [id])
+  platform_id Int
+  platform Platform @relation(fields: [platform_id], references: [id])
+  restaurant_platform_uri String
+  created_at DateTime @default(now())
+
+  platform_availability PlatformRestaurantAvailability[]
+
+  @@unique([restaurant_id, platform_id])
+}
+
+model PlatformRestaurantAvailability {
+  id Int @id @default(autoincrement())  
+  created_at DateTime @default(now())
+  updated_at DateTime @updatedAt
+  restaurant_platform_id Int
+  restaurant_platform RestaurantPlatform @relation(fields: [restaurant_platform_id], references: [id])
+  is_available Boolean @default(true)
+}
