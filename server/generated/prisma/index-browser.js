@@ -148,7 +148,8 @@ exports.Prisma.PlatformRestaurantAvailabilityScalarFieldEnum = {
   created_at: 'created_at',
   updated_at: 'updated_at',
   restaurant_platform_id: 'restaurant_platform_id',
-  is_available: 'is_available'
+  is_available: 'is_available',
+  is_status_true: 'is_status_true'
 };
 
 exports.Prisma.SortOrder = {

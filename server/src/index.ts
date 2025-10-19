@@ -4,6 +4,10 @@ import dotenv from 'dotenv';
 import RestaurantService from './services/restaurants.js';
 import cors from 'cors';
 
+import schedule from 'node-schedule'
+import { CRON_SYNTAX } from './config.js';
+import WorkerService from './services/workers.js';
+
 dotenv.config();
 
 const app = express();
@@ -72,3 +76,8 @@ app.listen(PORT, () => {
   console.log(`Server is up and running at PORT ${PORT}`);
 })
 
+const job = schedule.scheduleJob(CRON_SYNTAX, async function(){
+  console.log(`Initiating availability sync pipeline with the cronsyntax ${CRON_SYNTAX}`);
+  const result = await WorkerService.sync();
+  console.log(`Output: ${JSON.stringify(result, null, 2)}`);
+});

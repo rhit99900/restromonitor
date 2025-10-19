@@ -31,7 +31,25 @@ class Restaurants {
         }
       } },
     });
-  }
+  }  
+  
+  public getRestaurantByName = async (name: string) => {
+    return Prisma.restaurants.findUnique({
+      where: {
+        name: name
+      }, 
+      include: { listings: {
+        include: {
+          platform: {
+            select: {
+              name: true,
+              platform_uri: true
+            }
+          }          
+        }
+      } },
+    });
+  }  
 }
 
 const RestaurantService = new Restaurants();

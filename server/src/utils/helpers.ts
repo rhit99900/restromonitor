@@ -1,4 +1,5 @@
-import type { Platforms, Restaurants } from "./types/common.js"
+import type { Platforms, Restaurants } from "../types/common.js"
+import path from "path"
 
 export const restaurants: Restaurants[]= [{
   name: "McDonald's - Orion Avenue Mall",
@@ -9,7 +10,8 @@ export const restaurants: Restaurants[]= [{
     {
       name: "Swiggy",
       restaurant_platform_uri: "https://www.swiggy.com/city/bangalore/mcdonalds-orion-east-mall-banaswadi-rest87870",
-      api_path: "https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=13.0033745&lng=77.6271216&restaurantId=87870&catalog_qa=undefined&submitAction=ENTER"
+      api_path: "https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=13.0033745&lng=77.6271216&restaurantId=87870&catalog_qa=undefined&submitAction=ENTER",
+      json_path: '87870.json',
     }
   ],
   expected_open_time: "11:00",
@@ -23,7 +25,8 @@ export const restaurants: Restaurants[]= [{
     {
       name: "Swiggy",
       restaurant_platform_uri: "https://www.swiggy.com/city/bangalore/mcdonalds-manyata-embassy-business-park-nagawara-rest266027",
-      api_path: 'https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=13.0033745&lng=77.6271216&restaurantId=266027&catalog_qa=undefined&submitAction=ENTER'
+      api_path: 'https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=13.0033745&lng=77.6271216&restaurantId=266027&catalog_qa=undefined&submitAction=ENTER',
+      json_path: '266027.json'
     }
   ],
   expected_open_time: "11:00",
@@ -37,7 +40,8 @@ export const restaurants: Restaurants[]= [{
     {
       name: "Swiggy",
       restaurant_platform_uri: "https://www.swiggy.com/city/bangalore/mcdonalds-hrbr-layout-kamanahalli-main-road-rest23693",
-      api_path: 'https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=13.0033745&lng=77.6271216&restaurantId=23693&catalog_qa=undefined&submitAction=ENTER'
+      api_path: 'https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=13.0033745&lng=77.6271216&restaurantId=23693&catalog_qa=undefined&submitAction=ENTER',
+      json_path: '23693.json'
     }
   ],
   expected_open_time: "11:00",
@@ -51,7 +55,8 @@ export const restaurants: Restaurants[]= [{
     {
       name: "Swiggy",
       restaurant_platform_uri: "https://www.swiggy.com/city/bangalore/mcdonalds-cmh-road-indiranagar-rest23681",
-      api_path: 'https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=13.0033745&lng=77.6271216&restaurantId=23681&catalog_qa=undefined&submitAction=ENTER'
+      api_path: 'https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=13.0033745&lng=77.6271216&restaurantId=23681&catalog_qa=undefined&submitAction=ENTER',
+      json_path: '23681.json'
     }
   ],
   expected_open_time: "11:00",
@@ -65,7 +70,8 @@ export const restaurants: Restaurants[]= [{
     {
       name: "Swiggy",
       restaurant_platform_uri: "https://www.swiggy.com/city/bangalore/mcdonalds-brigade-road-ashok-nagar-rest87869",
-      api_path: 'https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=13.0033745&lng=77.6271216&restaurantId=87869&catalog_qa=undefined&submitAction=ENTER'
+      api_path: 'https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=13.0033745&lng=77.6271216&restaurantId=87869&catalog_qa=undefined&submitAction=ENTER',
+      json_path: '87869.json'
     }
   ],
   expected_open_time: "11:00",

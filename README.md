@@ -149,8 +149,7 @@ The backend provides the following REST API endpoints:
 
 - `GET /` - Health check endpoint
 - `GET /restaurants` - Get all restaurants with their platform listings
-- `GET /restaurants/:id` - Get specific restaurant details
-- `GET /restaurants/:id/availability` - Get restaurant availability status
+- `GET /restaurants/:id` - Get specific restaurant details and availability statuses
 
 
 ## Development Scripts

@@ -1,0 +1,1 @@
+export const CRON_SYNTAX = process.env.CRON_SYNTAX || '*/30 * * * *';

@@ -1,7 +1,7 @@
 import { platform } from "os";
 import type { Platforms, Restaurants } from "../types/common.js";
 import Prisma from './prisma.js'
-import { platforms, restaurants } from "../utils.js";
+import { platforms, restaurants } from "../utils/helpers.js";
 
 
 async function createOrUpdateRestaurant(data: Restaurants) {

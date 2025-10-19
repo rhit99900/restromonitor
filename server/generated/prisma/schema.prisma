@@ -52,4 +52,7 @@ model PlatformRestaurantAvailability {
   restaurant_platform_id Int
   restaurant_platform    RestaurantPlatform @relation(fields: [restaurant_platform_id], references: [id])
   is_available           Boolean            @default(true)
+  is_status_true         Boolean            @default(true)
+
+  @@unique([restaurant_platform_id])
 }

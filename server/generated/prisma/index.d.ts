@@ -4619,6 +4619,7 @@ export namespace Prisma {
     updated_at: Date | null
     restaurant_platform_id: number | null
     is_available: boolean | null
+    is_status_true: boolean | null
   }
 
   export type PlatformRestaurantAvailabilityMaxAggregateOutputType = {
@@ -4627,6 +4628,7 @@ export namespace Prisma {
     updated_at: Date | null
     restaurant_platform_id: number | null
     is_available: boolean | null
+    is_status_true: boolean | null
   }
 
   export type PlatformRestaurantAvailabilityCountAggregateOutputType = {
@@ -4635,6 +4637,7 @@ export namespace Prisma {
     updated_at: number
     restaurant_platform_id: number
     is_available: number
+    is_status_true: number
     _all: number
   }
 
@@ -4655,6 +4658,7 @@ export namespace Prisma {
     updated_at?: true
     restaurant_platform_id?: true
     is_available?: true
+    is_status_true?: true
   }
 
   export type PlatformRestaurantAvailabilityMaxAggregateInputType = {
@@ -4663,6 +4667,7 @@ export namespace Prisma {
     updated_at?: true
     restaurant_platform_id?: true
     is_available?: true
+    is_status_true?: true
   }
 
   export type PlatformRestaurantAvailabilityCountAggregateInputType = {
@@ -4671,6 +4676,7 @@ export namespace Prisma {
     updated_at?: true
     restaurant_platform_id?: true
     is_available?: true
+    is_status_true?: true
     _all?: true
   }
 
@@ -4766,6 +4772,7 @@ export namespace Prisma {
     updated_at: Date
     restaurant_platform_id: number
     is_available: boolean
+    is_status_true: boolean
     _count: PlatformRestaurantAvailabilityCountAggregateOutputType | null
     _avg: PlatformRestaurantAvailabilityAvgAggregateOutputType | null
     _sum: PlatformRestaurantAvailabilitySumAggregateOutputType | null
@@ -4793,6 +4800,7 @@ export namespace Prisma {
     updated_at?: boolean
     restaurant_platform_id?: boolean
     is_available?: boolean
+    is_status_true?: boolean
     restaurant_platform?: boolean | RestaurantPlatformDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["platformRestaurantAvailability"]>
 
@@ -4802,6 +4810,7 @@ export namespace Prisma {
     updated_at?: boolean
     restaurant_platform_id?: boolean
     is_available?: boolean
+    is_status_true?: boolean
     restaurant_platform?: boolean | RestaurantPlatformDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["platformRestaurantAvailability"]>
 
@@ -4811,6 +4820,7 @@ export namespace Prisma {
     updated_at?: boolean
     restaurant_platform_id?: boolean
     is_available?: boolean
+    is_status_true?: boolean
     restaurant_platform?: boolean | RestaurantPlatformDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["platformRestaurantAvailability"]>
 
@@ -4820,9 +4830,10 @@ export namespace Prisma {
     updated_at?: boolean
     restaurant_platform_id?: boolean
     is_available?: boolean
+    is_status_true?: boolean
   }
 
-  export type PlatformRestaurantAvailabilityOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "created_at" | "updated_at" | "restaurant_platform_id" | "is_available", ExtArgs["result"]["platformRestaurantAvailability"]>
+  export type PlatformRestaurantAvailabilityOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "created_at" | "updated_at" | "restaurant_platform_id" | "is_available" | "is_status_true", ExtArgs["result"]["platformRestaurantAvailability"]>
   export type PlatformRestaurantAvailabilityInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     restaurant_platform?: boolean | RestaurantPlatformDefaultArgs<ExtArgs>
   }
@@ -4844,6 +4855,7 @@ export namespace Prisma {
       updated_at: Date
       restaurant_platform_id: number
       is_available: boolean
+      is_status_true: boolean
     }, ExtArgs["result"]["platformRestaurantAvailability"]>
     composites: {}
   }
@@ -5273,6 +5285,7 @@ export namespace Prisma {
     readonly updated_at: FieldRef<"PlatformRestaurantAvailability", 'DateTime'>
     readonly restaurant_platform_id: FieldRef<"PlatformRestaurantAvailability", 'Int'>
     readonly is_available: FieldRef<"PlatformRestaurantAvailability", 'Boolean'>
+    readonly is_status_true: FieldRef<"PlatformRestaurantAvailability", 'Boolean'>
   }
     
 
@@ -5736,7 +5749,8 @@ export namespace Prisma {
     created_at: 'created_at',
     updated_at: 'updated_at',
     restaurant_platform_id: 'restaurant_platform_id',
-    is_available: 'is_available'
+    is_available: 'is_available',
+    is_status_true: 'is_status_true'
   };
 
   export type PlatformRestaurantAvailabilityScalarFieldEnum = (typeof PlatformRestaurantAvailabilityScalarFieldEnum)[keyof typeof PlatformRestaurantAvailabilityScalarFieldEnum]
@@ -5990,6 +6004,7 @@ export namespace Prisma {
     updated_at?: DateTimeFilter<"PlatformRestaurantAvailability"> | Date | string
     restaurant_platform_id?: IntFilter<"PlatformRestaurantAvailability"> | number
     is_available?: BoolFilter<"PlatformRestaurantAvailability"> | boolean
+    is_status_true?: BoolFilter<"PlatformRestaurantAvailability"> | boolean
     restaurant_platform?: XOR<RestaurantPlatformScalarRelationFilter, RestaurantPlatformWhereInput>
   }
 
@@ -5999,20 +6014,22 @@ export namespace Prisma {
     updated_at?: SortOrder
     restaurant_platform_id?: SortOrder
     is_available?: SortOrder
+    is_status_true?: SortOrder
     restaurant_platform?: RestaurantPlatformOrderByWithRelationInput
   }
 
   export type PlatformRestaurantAvailabilityWhereUniqueInput = Prisma.AtLeast<{
     id?: number
+    restaurant_platform_id?: number
     AND?: PlatformRestaurantAvailabilityWhereInput | PlatformRestaurantAvailabilityWhereInput[]
     OR?: PlatformRestaurantAvailabilityWhereInput[]
     NOT?: PlatformRestaurantAvailabilityWhereInput | PlatformRestaurantAvailabilityWhereInput[]
     created_at?: DateTimeFilter<"PlatformRestaurantAvailability"> | Date | string
     updated_at?: DateTimeFilter<"PlatformRestaurantAvailability"> | Date | string
-    restaurant_platform_id?: IntFilter<"PlatformRestaurantAvailability"> | number
     is_available?: BoolFilter<"PlatformRestaurantAvailability"> | boolean
+    is_status_true?: BoolFilter<"PlatformRestaurantAvailability"> | boolean
     restaurant_platform?: XOR<RestaurantPlatformScalarRelationFilter, RestaurantPlatformWhereInput>
-  }, "id">
+  }, "id" | "restaurant_platform_id">
 
   export type PlatformRestaurantAvailabilityOrderByWithAggregationInput = {
     id?: SortOrder
@@ -6020,6 +6037,7 @@ export namespace Prisma {
     updated_at?: SortOrder
     restaurant_platform_id?: SortOrder
     is_available?: SortOrder
+    is_status_true?: SortOrder
     _count?: PlatformRestaurantAvailabilityCountOrderByAggregateInput
     _avg?: PlatformRestaurantAvailabilityAvgOrderByAggregateInput
     _max?: PlatformRestaurantAvailabilityMaxOrderByAggregateInput
@@ -6036,6 +6054,7 @@ export namespace Prisma {
     updated_at?: DateTimeWithAggregatesFilter<"PlatformRestaurantAvailability"> | Date | string
     restaurant_platform_id?: IntWithAggregatesFilter<"PlatformRestaurantAvailability"> | number
     is_available?: BoolWithAggregatesFilter<"PlatformRestaurantAvailability"> | boolean
+    is_status_true?: BoolWithAggregatesFilter<"PlatformRestaurantAvailability"> | boolean
   }
 
   export type RestaurantsCreateInput = {
@@ -6225,6 +6244,7 @@ export namespace Prisma {
     created_at?: Date | string
     updated_at?: Date | string
     is_available?: boolean
+    is_status_true?: boolean
     restaurant_platform: RestaurantPlatformCreateNestedOneWithoutPlatform_availabilityInput
   }
 
@@ -6234,12 +6254,14 @@ export namespace Prisma {
     updated_at?: Date | string
     restaurant_platform_id: number
     is_available?: boolean
+    is_status_true?: boolean
   }
 
   export type PlatformRestaurantAvailabilityUpdateInput = {
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
     is_available?: BoolFieldUpdateOperationsInput | boolean
+    is_status_true?: BoolFieldUpdateOperationsInput | boolean
     restaurant_platform?: RestaurantPlatformUpdateOneRequiredWithoutPlatform_availabilityNestedInput
   }
 
@@ -6249,6 +6271,7 @@ export namespace Prisma {
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
     restaurant_platform_id?: IntFieldUpdateOperationsInput | number
     is_available?: BoolFieldUpdateOperationsInput | boolean
+    is_status_true?: BoolFieldUpdateOperationsInput | boolean
   }
 
   export type PlatformRestaurantAvailabilityCreateManyInput = {
@@ -6257,12 +6280,14 @@ export namespace Prisma {
     updated_at?: Date | string
     restaurant_platform_id: number
     is_available?: boolean
+    is_status_true?: boolean
   }
 
   export type PlatformRestaurantAvailabilityUpdateManyMutationInput = {
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
     is_available?: BoolFieldUpdateOperationsInput | boolean
+    is_status_true?: BoolFieldUpdateOperationsInput | boolean
   }
 
   export type PlatformRestaurantAvailabilityUncheckedUpdateManyInput = {
@@ -6271,6 +6296,7 @@ export namespace Prisma {
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
     restaurant_platform_id?: IntFieldUpdateOperationsInput | number
     is_available?: BoolFieldUpdateOperationsInput | boolean
+    is_status_true?: BoolFieldUpdateOperationsInput | boolean
   }
 
   export type IntFilter<$PrismaModel = never> = {
@@ -6513,6 +6539,7 @@ export namespace Prisma {
     updated_at?: SortOrder
     restaurant_platform_id?: SortOrder
     is_available?: SortOrder
+    is_status_true?: SortOrder
   }
 
   export type PlatformRestaurantAvailabilityAvgOrderByAggregateInput = {
@@ -6526,6 +6553,7 @@ export namespace Prisma {
     updated_at?: SortOrder
     restaurant_platform_id?: SortOrder
     is_available?: SortOrder
+    is_status_true?: SortOrder
   }
 
   export type PlatformRestaurantAvailabilityMinOrderByAggregateInput = {
@@ -6534,6 +6562,7 @@ export namespace Prisma {
     updated_at?: SortOrder
     restaurant_platform_id?: SortOrder
     is_available?: SortOrder
+    is_status_true?: SortOrder
   }
 
   export type PlatformRestaurantAvailabilitySumOrderByAggregateInput = {
@@ -6983,6 +7012,7 @@ export namespace Prisma {
     created_at?: Date | string
     updated_at?: Date | string
     is_available?: boolean
+    is_status_true?: boolean
   }
 
   export type PlatformRestaurantAvailabilityUncheckedCreateWithoutRestaurant_platformInput = {
@@ -6990,6 +7020,7 @@ export namespace Prisma {
     created_at?: Date | string
     updated_at?: Date | string
     is_available?: boolean
+    is_status_true?: boolean
   }
 
   export type PlatformRestaurantAvailabilityCreateOrConnectWithoutRestaurant_platformInput = {
@@ -7082,6 +7113,7 @@ export namespace Prisma {
     updated_at?: DateTimeFilter<"PlatformRestaurantAvailability"> | Date | string
     restaurant_platform_id?: IntFilter<"PlatformRestaurantAvailability"> | number
     is_available?: BoolFilter<"PlatformRestaurantAvailability"> | boolean
+    is_status_true?: BoolFilter<"PlatformRestaurantAvailability"> | boolean
   }
 
   export type RestaurantPlatformCreateWithoutPlatform_availabilityInput = {
@@ -7193,12 +7225,14 @@ export namespace Prisma {
     created_at?: Date | string
     updated_at?: Date | string
     is_available?: boolean
+    is_status_true?: boolean
   }
 
   export type PlatformRestaurantAvailabilityUpdateWithoutRestaurant_platformInput = {
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
     is_available?: BoolFieldUpdateOperationsInput | boolean
+    is_status_true?: BoolFieldUpdateOperationsInput | boolean
   }
 
   export type PlatformRestaurantAvailabilityUncheckedUpdateWithoutRestaurant_platformInput = {
@@ -7206,6 +7240,7 @@ export namespace Prisma {
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
     is_available?: BoolFieldUpdateOperationsInput | boolean
+    is_status_true?: BoolFieldUpdateOperationsInput | boolean
   }
 
   export type PlatformRestaurantAvailabilityUncheckedUpdateManyWithoutRestaurant_platformInput = {
@@ -7213,6 +7248,7 @@ export namespace Prisma {
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
     is_available?: BoolFieldUpdateOperationsInput | boolean
+    is_status_true?: BoolFieldUpdateOperationsInput | boolean
   }
 
 
