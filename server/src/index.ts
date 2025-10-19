@@ -30,6 +30,64 @@ app.get('/restaurants', async (req: Request, res: Response) => {
   }
 })
 
+app.get('/restaurants/:id', async (req: Request, res: Response) => {
+  try {
+    const id = Number(req.params.id);
+    if(!req.params.id || Number.isNaN(id)) {
+      res.status(400).send({
+        success: false,
+        message: "Enter a valid restaurant id"
+      })
+    }
+    const restaurant = await RestaurantService.getRestaurant(id);
+    if(restaurant) {
+      res.status(200).send({
+        data: restaurant,
+        success: true
+      })
+    } else {
+      res.status(400).send({
+        message: `Restaurant ${req.params.id} not found`,
+        success: false
+      })
+    }
+  } catch(e) {
+    res.status(500).send({
+      success: false,
+      message: "Something must be wrong!"
+    })
+  }
+})
+
+app.get('/restaurants/:id/availability', async (req: Request, res: Response) => {
+  try {
+    const id = Number(req.params.id);
+    if(!req.params.id || Number.isNaN(id)) {
+      res.status(400).send({
+        success: false,
+        message: "Enter a valid restaurant id"
+      })
+    }
+    const restaurant = await RestaurantService.getRestaurantAvailability(id);
+    if(restaurant) {
+      res.status(200).send({
+        data: restaurant,
+        success: true
+      })
+    } else {
+      res.status(400).send({
+        message: `Restaurant ${req.params.id} not found`,
+        success: false
+      })
+    }
+  } catch(e) {
+    res.status(500).send({
+      success: false,
+      message: "Something must be wrong!"
+    })
+  }
+})
+
 const PORT = process.env.PORT;
 
 app.listen(PORT, () => {

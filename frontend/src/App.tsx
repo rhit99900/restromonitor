@@ -1,22 +1,18 @@
-import { useState } from 'react';
-import './App.css';
+
+import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
+import RestaurantsPage from './pages/restaurantspage';
+import RestaurantDetailPage from './pages/restaurantsdetailspage';
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>      
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>      
-    </>
-  )
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<RestaurantsPage />} />
+        <Route path="/restaurants/:id" element={<RestaurantDetailPage />} />
+        <Route path="*" element={<Navigate to="/" replace />} />
+      </Routes>
+    </BrowserRouter>
+  );
 }
 
-export default App
+export default App;
