@@ -1,44 +1,8 @@
 import { platform } from "os";
 import type { Platforms, Restaurants } from "../types/common.js";
 import Prisma from './prisma.js'
+import { platforms, restaurants } from "../utils.js";
 
-const restaurants: Restaurants[]= [{
-  name: "McDonald's - Orion Avenue Mall",
-  address: "3rd Floor, Orion East Mall, Jaibharath Nagar, Sathya Nagar, Banaswadi, Bengaluru, Karnataka 560033",
-  city: "Bengaluru",
-  brand: "McDonalds",
-  platforms: [
-    {
-      name: "Swiggy",
-      restaurant_platform_uri: "https://www.swiggy.com/city/bangalore/mcdonalds-orion-east-mall-banaswadi-rest87870",
-      api_path: "https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=13.0033745&lng=77.6271216&restaurantId=87870&catalog_qa=undefined&submitAction=ENTER"
-    }
-  ],
-  expected_open_time: "11:00",
-  expected_close_time: "23:00"
-}, {
-  name: "McDonald's - Manyata Tech Park",
-  address: "Ground floor,MFAR Manyata Tech Park,phase IV Nagawara, Kasaba, Hobli, Bengaluru, Karnataka 560045", 
-  city: "Bengaluru",
-  brand: "McDonalds",
-  platforms: [
-    {
-      name: "Swiggy",
-      restaurant_platform_uri: "https://www.swiggy.com/city/bangalore/mcdonalds-manyata-embassy-business-park-nagawara-rest266027",
-      api_path: 'https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=13.0033745&lng=77.6271216&restaurantId=266027&catalog_qa=undefined&submitAction=ENTER'
-    }
-  ],
-  expected_open_time: "11:00",
-  expected_close_time: "23:00"
-}]
-
-const platforms: Platforms[] = [{
-  name: 'Swiggy',
-  platform_uri: "https://swiggy.com",  
-}, {
-  name: "Zomato",
-  platform_uri: "https://zomato.com"
-}]
 
 async function createOrUpdateRestaurant(data: Restaurants) {
   const restaurant = await getRestaurant(data);
