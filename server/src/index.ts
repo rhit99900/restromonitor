@@ -68,7 +68,7 @@ app.get('/restaurants/:id', async (req: Request, res: Response) => {
       message: "Something must be wrong!"
     })
   }
-})
+});
 
 const PORT = process.env.PORT;
 

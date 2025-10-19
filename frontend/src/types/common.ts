@@ -23,6 +23,7 @@ export type RestaurantsResponse =
 export type AvailabilityRecord = {
   id: number;
   is_available: boolean;
+  is_status_true: boolean;
   created_at: string;
   updated_at: string;
 };

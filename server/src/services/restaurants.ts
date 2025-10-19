@@ -24,6 +24,7 @@ class Restaurants {
           platform_availability: {
             select: {
               is_available: true,
+              is_status_true: true,
               created_at: true,
               updated_at: true
             }
